@@ -91,9 +91,19 @@ em {
     opacity: 1;
 }
 
-/* .form__input:invalid {
-    border: 2px solid rgba(255, 121, 121, 1)
+
+
+/* .form__input:invalid + .form__error  {
+    display: flex;
 } */
+
+.input--touched:invalid {
+    border: 2px solid rgba(255, 121, 121, 1);
+}
+
+.form.touched .form__input:invalid + .form__error {
+    display: block;
+}
 
 .form__error{
     display: none;
