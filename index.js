@@ -7,24 +7,10 @@ formSubmit.addEventListener("click", function(event){
 })
 
 
-
-
-
-const inputEls = document.querySelectorAll('.form__input') 
-inputEls.addEventListener.forEach("click")
-
-// (function(inputEl) {
-    
-//     inputEl.addEventListener("input", function() {
-//         console.log("oi")   
-//         // inputEl.classList.add("touched")
-//     })
+const inputEls = document.querySelectorAll(".form__input")
+inputEls.forEach(function(inputEl) {
+     inputEl.addEventListener("input", function() {
+         inputEl.classList.add("touched")
+         console.log("opa")
+     });
 })
-
-// const inputEls = document.querySelectorAll(".form__input")
-// // inputEls.addEventListener("click", function(){
-// //     inputEls.forEach(function(inputEl) {
-// //      inputEl.addEventListener("input", function() {
-// //          inputEl.classList.add("touched")
-// //      });
-// //  })

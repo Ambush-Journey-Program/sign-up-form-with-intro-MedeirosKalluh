@@ -91,16 +91,15 @@ em {
     opacity: 1;
 }
 
-
-
-/* .form__input:invalid + .form__error  {
-    display: flex;
-} */
-
-.input--touched:invalid {
+.form__input.touched:invalid,
+.form.touched .form__input:invalid  {
+    background: url(../images/alert.svg) no-repeat 7px 7px;
+    background-position:  right 24px bottom 12px;
+    padding-right:30px;
     border: 2px solid rgba(255, 121, 121, 1);
 }
 
+.form__input.touched:invalid + .form__error,
 .form.touched .form__input:invalid + .form__error {
     display: block;
 }
