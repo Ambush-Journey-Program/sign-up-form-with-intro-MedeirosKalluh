@@ -1,7 +1,34 @@
+
+:root {
+    --body-direction: row;
+    --body-height: 100vh;
+    --body-padding: 3rem 10rem;
+    --text-align: start;
+    --title-font-size: 3.125rem;
+    --title-line-height: 3.5rem;
+    --form-padding: 2.5rem;
+    --container-padding: 4.25rem 2.8rem;
+}
+
+@media (max-width: 655px) {
+    :root {
+        --body-direction: column;
+        --body-height: 100%;
+        --body-padding: 5.5rem  1.25rem 4.25rem;
+        --text-align: center;
+        --title-font-size: 1.75rem;
+        --title-line-height: 2.25rem;
+        --form-padding: 1.5rem;
+        --container-padding: 2.8rem 0;
+    }
+}
+
 body {
     display: flex;
+    flex-direction: var(--body-direction);
+    padding: var(--body-padding);
     width: 100%;
-    height: 100vh;
+    height: var(--body-height);
     justify-content: center;
     align-items: center;
     background-image: url(../images/background.jpg);
@@ -14,18 +41,19 @@ em {
 
 .info {
     flex: 1;
-    margin-left: 121px;
-    align-self: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    text-align: var(--text-align);
 }
 
 .info__title {
     font-family: 'Poppins';
     font-weight: 700;
-    font-size: 3.125rem;
-    line-height: 55px;
-    margin-bottom: 36px;
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+    margin-bottom: 2.25rem;
     letter-spacing: -0.520833px;
     color: #FFFFFF;
 }
@@ -34,25 +62,30 @@ em {
     font-weight: 500;
     font-size: 1rem;
     color: #FFFFFF;
+    line-height: 1.6rem;
 }
 
 .container {
     flex: 1;
     display: flex;
-    margin-right: 121px;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    padding: 40px;
+    padding: var(--container-padding);
+
+
 }
 
 .try-button {
-    height: 60px;
-    padding: 17px;
-    margin-bottom: 24px;
+    padding: 1.25rem 4.25rem;
+    line-height: 1.6rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
     background: #5E54A4;
     box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
     border: none;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 1rem;
     text-align: center;
     letter-spacing: 0.267857px;
     color: #FFFFFF;
@@ -66,20 +99,20 @@ em {
 
 .form {
     display: flex;
+    width: 100%;
     flex-direction: column;
-    padding: 40px;
+    padding: var(--form-padding);
     box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
     border-radius: 10px;
     background: #FFFFFF;
 }
 
 .form__input {
-    height: 56px;
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
     border: 2px solid rgba(222, 222, 222, 1);
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.25px;
     color: #3D3B48;
@@ -95,8 +128,8 @@ em {
 .form.touched .form__input:invalid  {
     background: url(../images/alert.svg) no-repeat 7px 7px;
     background-position:  right 24px bottom 12px;
-    padding-right:30px;
-    margin-bottom: 6px;
+    padding-right: 2rem;
+    margin-bottom: 0.4rem;
     border: 2px solid rgba(255, 121, 121, 1);
 }
 
@@ -108,19 +141,19 @@ em {
 .form__error{
     display: none;
     font-style: italic;
-    margin-bottom: 20px;
-    font-size: 11px;
+    margin-bottom: 1.25rem;
+    font-size: 0.7rem;
     text-align: right;
     color: #FF7979;  
 }
 
 .form__button {
-    height: 56px;
+    height: 3.5rem;
     background: #38CC8B;
     box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
     border: none;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: #FFFFFF;
@@ -133,15 +166,15 @@ em {
 }
 
 .form__footer {
-    font-size: 11px;
-    line-height: 26px;
+    font-size: 0.75rem;
+    line-height: 1.62rem;
     text-align: center;
     color: #BAB7D4;
 }
 
 .link {
     font-weight: 700;
-    font-size: 11px;
+    font-size: 0.7rem;
     color: #FF7979;
     cursor: pointer;
 }
