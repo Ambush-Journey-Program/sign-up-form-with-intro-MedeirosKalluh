@@ -12,25 +12,22 @@ inputEls.forEach(function(inputEl) {
      });
 })
 
-
 const emailError = document.getElementById("email-error")
 const emailInput = document.getElementById("form__email")
-function checkEmail(emailInput) {
-   const validEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-   
-   return validEmail.test(emailInput); 
-}
-
 emailInput.addEventListener("input", function(event){
     applyError(event.target.value)
 })
 
 function applyError(emailInput){
-    const isEmailValid = checkEmail(emailInput.value);
-    const emptyEmail = '';
-    if (isEmailValid === emptyEmail){
-        emailError.textContent = "Email cannot be empty" 
-    } else  if (!isEmailValid){
+    const isEmailValid = checkEmail(emailInput);
+    if(!isEmailValid && emailInput){
         emailError.textContent = "Looks like this is not an email"
-    } 
+    } else {
+        emailError.textContent = "Email cannot be empty" 
+    }
+}
+
+function checkEmail(emailInput) {
+   const validEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   return validEmail.test(emailInput); 
 }
